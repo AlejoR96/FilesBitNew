@@ -1,0 +1,73 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*.container{
+  height: 500px;
+  background-color: aquamarine;
+  display:grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  
+  gap: 10px;
+  justify-content: start;
+  align-content: start;
+
+  justify-items:center;
+  align-items: center;
+
+}
+
+.item{
+  background-color: green;
+  min-width: 20px;
+  min-height: 20px;
+}*/
+
+/* Challenger 1
+.container{
+  
+  height: 500px;
+  background-color: burlywood;
+  display: grid;
+  // row-gap: 5;
+  //column-gap: 10; 
+  gap: 20px;
+  grid-template-columns: 50px 50px;
+  grid-template-rows: 20px 20px;
+  justify-content: end;
+  align-content: end;
+  // place-content: end; 
+  justify-items: right ;
+  align-items: right;
+}
+
+.item{
+  background-color: aqua;
+  min-width: 20px;
+  min-height: 20px;
+}*/
+
+/* Challenger 2 */
+/* .container{
+
+}
+
+.item{
+
+} */
+
+/* Challenger 3 */
+.container{
+  height: 500px;
+  background-color: aquamarine;
+  display:grid;
+  gri
+  
+}
+
+.item{
+
+}

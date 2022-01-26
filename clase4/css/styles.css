@@ -1,0 +1,25 @@
+body{
+    display: flex;
+}
+
+
+h1{
+    
+    position: relative;
+    
+}
+
+h2{
+    background-color: blue;
+    position: absolute;
+}
+
+
+p{
+    position: fixed;
+    top:20px;
+}
+
+h4{
+    position: sticky;
+}

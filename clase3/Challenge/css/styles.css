@@ -1,0 +1,31 @@
+body{
+    margin: 1px;
+}
+
+.headPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: cadetblue;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.menuNav{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.underList{
+    text-decoration: none;
+}
+
+.list{
+    display:inline;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
