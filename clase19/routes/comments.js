@@ -58,7 +58,7 @@ const comments = [
   });
 
 
-/* ------ OTHER METO COMMENTS------ */
+/* ------ OTHERS METHODS OF COMMENTS------ */
 
 router.get('/', (req,res) => {
   res.json({

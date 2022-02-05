@@ -54,9 +54,9 @@ const entries = [
     if (entryRequest) {
       response.json(entryRequest)
     } else {
-      response.json({
+      response.status(404).json({
         message: "User not found",
-        statusCode: "404"
+
       })
     };
   });
@@ -69,7 +69,7 @@ const entries = [
   });
 
 
-  /* ------ENTRIES------ */
+  /* ------OTHERS METHODS OF ENTRIES------ */
 
   router.get('/', (req,res) => {
     res.json({
@@ -85,14 +85,12 @@ const entries = [
   });
 
   router.put('/', (req,res) => {
-
     res.json({
       Message:"Hello in PUT entries"
     })
   });
 
   router.delete('/', (req,res) => {
-
     res.json({
       Message:"Hello in DELETE entries"
     })

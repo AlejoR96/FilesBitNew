@@ -51,12 +51,13 @@ router.get('/', (request, response) => {
   };
 });
 
-// querys con for ech
+/* ------ OTHERS METHODS OF USERS------ */
+
 router.get('/:id', (requests, response) => {
-  const userID = requests.params.id
+  const {id} = requests.params;
   let userRequests = null;
   usersDB.forEach((item) => {
-    if (item.id === parseInt(userID)) {
+    if (item.id === parseInt(id)) {
 
       userRequests = item;
     };
@@ -71,28 +72,55 @@ router.get('/:id', (requests, response) => {
   }
 });
 
-// others types of methods
 
-/* ---USERS--- */
-router.post('/', (req,res) => {
-
-  res.json({
-    Message:"Hello desde Post"
-  })
+router.post('/', (req, res) => {
+  const { body } = req;
+  try {
+    usersDB.push(body);
+    res.status(201).json({
+      message: 'User created succesfully',
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "There was an internal",
+      error
+    })
+  }
 });
 
-router.put('/', (req,res) => {
-
-  res.json({
-    Message:"Hello desde Put"
-  })
+router.put('/:id/name/:name/username/:username', (req,res) => {
+  const{id, name, username} = req. params;
+  try {
+    usersDB.forEach((item)=>{
+      if (item.id === parseInt(id)) {
+        item.name = name
+        item.username = username
+      }
+    })
+    res.json({
+      Message:"User name and it's name modified succesfuly"
+    })
+  } catch (error) {
+    res.status(500).json({
+      message:"There was an internal error",
+      error
+    })
+  }
 });
 
-router.delete('/', (req,res) => {
+router.delete('/;id', (req,res) => {
+  const { id } = req.params
+  try {
+    usersDB = usersDB.filter( item =>
+      item.id !== parseInt (id)
+    );
+  } catch (error) {
+    res.status(500).json({
+      Message:"There was an internal",
+      error
+    })
+  }
 
-  res.json({
-    Message:"Hello desde Post"
-  })
 });
 
 module.exports = router;
