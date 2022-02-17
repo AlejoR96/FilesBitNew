@@ -5,10 +5,9 @@ const conexion_DB = require('./config/db');
 const app = express();
 conexion_DB();
 
+app.use(express.json());
 
-app.get('/' , (req, res) =>{
-  res.send('Mi aplicacion con express')
-})
+app.use('/api/productos', require('./routes/producto'));
 
 app.listen(3000, () => {
  console.log('el servidor esta cargado')
