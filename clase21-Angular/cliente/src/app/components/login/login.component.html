@@ -1,20 +1,20 @@
-<section class="container-fluid d-flex justify-content-center alling-item-center login-container">
-    <div class="login-page p-5">
-        <div class="login-form">
+<section class="container-fluid d-flex justify-content-center align-items-center login-container">
+    <div class="login-page">
+        <div class="login-form p-5">
+            <app-slider></app-slider>
             <form>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control login-input" placeholder="Ingrese su correo">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control login-input" placeholder="Ingrese su contraseña">
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="d-grid gap-2">
+                    <button class="login-button">
+                        <span>INGRESAR</span>
+                        <div class="liquid"></div>
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
