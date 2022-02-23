@@ -72,3 +72,39 @@ function saludo(nombre:string,apellido?:string):string {
 console.log(saludo('Alejo', 'Rivera'));
 
 
+/* Reto - TSC */
+
+function realizarProceso(valor:any, accion_usuario:string):void {
+  
+  let localArray:any = localStorage.getItem("nuestro_array");
+  switch (accion_usuario) {
+    case 'agregar':
+      if (localStorage.getItem("nuestro_array")===null) {
+        localStorage.setItem("nuestro_array", valor);
+      }else{
+        console.log(localArray);
+  
+        localArray = localArray.split(',');
+        console.log(localArray);
+        localArray.push(valor);
+      
+        localStorage.setItem("nuestro_array", localArray);
+        break;
+      }
+      case 'eliminar':
+      localArray = localStorage.getItem("nuestro_array");
+      localArray = localArray.split(',');
+      if (localArray.length > 1) {
+        localArray.pop();
+        localStorage.setItem("nuestro_array", localArray);      
+      }else{
+        localStorage.removeItem("nuestro_array");
+      }
+      break;
+  
+    default:
+      break;
+  }
+}
+
+realizarProceso('miValor', 'eliminar');
