@@ -1,0 +1,11 @@
+/* Fuente para el error 404 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,300;1,500&display=swap');
+.error404{
+
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+.error404 h1{
+    font-size: 10rem;
+}
