@@ -109,3 +109,62 @@ function realizarProceso(valor: any, accion_usuario: string): void {
 }
 
 realizarProceso("miValor", "eliminar");
+
+// tipos de interfaces
+
+interface Iestructura{
+  identificador:number,
+  nombre: string,
+  imagen: string
+}
+function soy_interfaz(data_api: Iestructura):any{
+  return `el identificador del mensaje es: ${data_api.identificador} y el nombre es: ${data_api.nombre}`
+}
+
+
+console.log(soy_interfaz({identificador:1,nombre: "Rick", imagen:"https://rickandmortyapi.com/api/character/avatar/1.jpeg"}));
+
+// POO - PUBLIC , PRIVATE , PROTECTED 
+class Usuario{
+  public nombre:string;
+  public apellido:string;
+  private edad: number;
+  protected correo: string;
+
+  constructor(nombreUsuario:string,apellidoUsuario:string,edadUsuario:number,correoUsuario: string){
+    this.nombre = nombreUsuario;
+    this.apellido = apellidoUsuario;
+    this.edad = edadUsuario;
+    this.correo = correoUsuario;
+  }
+
+  saludar (){
+    return `Buenas noches ${this.nombre}...`;
+  }
+
+  resultadosVentasVendedor(nro_factura: number, estadoEntrega: boolean){
+    let estado = estadoEntrega ? 'entregado' : 'en reparto';
+    return `El vendedor ${this.nombre}, tuvo una factura con Nro: ${nro_factura}`
+  }
+  
+}
+
+/* let persona = new Usuario("Alejo", "Rivera", 25, "jalejandro142@gmail.com");
+console.log(persona.saludar())
+*/
+class Ventas extends Usuario {
+  nro_factura:number;
+  entregado:boolean;
+
+  constructor(nombreUsuario:string,apellidoUsuario:string,edadUsuario:number,correoUsuario: string,facturaVenta:number, estadoEntrega:boolean){
+    super(nombreUsuario, apellidoUsuario, edadUsuario, correoUsuario);
+    this.nro_factura = facturaVenta;
+    this.entregado = estadoEntrega;
+  }
+
+  resultadosVentasVendedor() {
+      return super.resultadosVentasVendedor(this.nro_factura, this.entregado);
+  }
+}
+let persona = new Ventas ("Alejo", "Rivera", 25, "jalejandro142@gmail.com", 78945612, true)
+console.log(persona.resultadosVentasVendedor())
